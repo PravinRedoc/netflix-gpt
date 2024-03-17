@@ -3,14 +3,11 @@ import Header from './Header';
 import { checkValidation } from '../utils/validate';
 import { auth } from '../utils/firebase';
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
 
 
 const Login = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+ 
   const [isSignIn, setIsSignIn]=  useState(true);
   const [errorMessage, setErrorMessage] = useState("")
 
@@ -35,16 +32,11 @@ const Login = () => {
             updateProfile(auth.currentUser, {
               displayName: name.current.value
             }).then(() => {
-              // Profile updated!
-              // ...
-              const {uid,email,displayName} = auth.currentUser;
-              //update my store
-              dispatch(addUser({uid:uid,email:email,displayName:displayName}));
-              navigate("/browse")
+              
             }).catch((error) => {
               // An error occurred
               // ...
-              navigate("/error")
+             
             });
            
     // ...
@@ -64,14 +56,14 @@ const Login = () => {
         // Signed in 
         const user = userCredential.user;
         console.log(user);
-        navigate("/browse")
+        
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         setErrorMessage(errorMessage);
-        navigate("/")
+       
       });
 
     }

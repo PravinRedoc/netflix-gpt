@@ -4,12 +4,14 @@ import { checkValidation } from '../utils/validate';
 import { auth } from '../utils/firebase';
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { addUser } from '../utils/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
  
   const [isSignIn, setIsSignIn]=  useState(true);
   const [errorMessage, setErrorMessage] = useState("")
+  const navigate = useNavigate();
 
   const email =  useRef(null)
   const password = useRef(null)
@@ -56,6 +58,7 @@ const Login = () => {
         // Signed in 
         const user = userCredential.user;
         console.log(user);
+        navigate("/browse");
         
         // ...
       })

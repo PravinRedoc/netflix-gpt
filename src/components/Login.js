@@ -81,7 +81,7 @@ const Login = () => {
      <img className='absolute' src={BG_IMG_URL} 
      alt="landing-page" />
 
-     <form onSubmit={(e) =>e.preventDefault()} className='w-3/12 absolute p-12 text-white bg-black my-36 mx-auto right-0 left-0 bg-opacity-80 rounded-lg'> 
+     <form onSubmit={(e) =>e.preventDefault()} className='w-full md:w-3/12 absolute p-12 text-white bg-black my-36 mx-auto right-0 left-0 bg-opacity-80 rounded-lg'> 
      <h1 className='font-bold text-2xl py-4'>{isSignIn ? "Sign In" : "Sign Up"}</h1>
 
       {!isSignIn && <input ref={name}  type="text" placeholder='Full Name' className='p-4 my-4 w-full rounded-lg bg-gray-700' />}

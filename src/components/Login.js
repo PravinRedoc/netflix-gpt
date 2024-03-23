@@ -5,6 +5,7 @@ import { auth } from '../utils/firebase';
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { addUser } from '../utils/userSlice';
 import { useNavigate } from 'react-router-dom';
+import { BG_IMG_URL } from '../utils/constants';
 
 
 const Login = () => {
@@ -34,6 +35,7 @@ const Login = () => {
             updateProfile(auth.currentUser, {
               displayName: name.current.value
             }).then(() => {
+              navigate("/browse");
               
             }).catch((error) => {
               // An error occurred
@@ -76,7 +78,7 @@ const Login = () => {
   return (
     <div>
       <Header />
-     <img className='absolute' src="https://assets.nflxext.com/ffe/siteui/vlv3/93da5c27-be66-427c-8b72-5cb39d275279/9e8c6f69-bc3a-4df6-b155-b1cb9f59255d/IE-en-20240226-popsignuptwoweeks-perspective_alpha_website_small.jpg" 
+     <img className='absolute' src={BG_IMG_URL} 
      alt="landing-page" />
 
      <form onSubmit={(e) =>e.preventDefault()} className='w-3/12 absolute p-12 text-white bg-black my-36 mx-auto right-0 left-0 bg-opacity-80 rounded-lg'> 

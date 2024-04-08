@@ -61,7 +61,7 @@ const Header = () => {
       alt="logo" />
       {user && (<div className='my-auto p-2 flex justify-between'>
         <button className='mx-auto p-2 mr-1 font-semibold text-white bg-red-600'
-        onClick={handleGptSearchBtn}>{gptScreen?"AI Search":"Home"}</button>
+        onClick={handleGptSearchBtn}>{gptScreen?"Home":"AI Search"}</button>
         <img className='hidden md:block px-2 border-red-500' src="https://occ-0-1218-1217.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229" alt="usericon" />
       <button onClick={handleSignOut} className='bg-green font-bold text-white'>(Sign Out)</button>
       </div>)}

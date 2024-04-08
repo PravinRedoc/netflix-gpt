@@ -90,7 +90,7 @@ const Login = () => {
       <p className='text-red-600'>{errorMessage}</p>
       <button  onClick={handleButtonClick} className='p-4 my-6 font-bold bg-red-500 w-full'>{isSignIn ? "Sign In" : "Sign Up"}</button>
       <p className='font-bold py-4 cursor-pointer' onClick={toggleSignInForm}>
-        {isSignIn ? "New to Netflix, Sign up now!" : "Already registered, Sign In now!"}
+        {isSignIn ? "New to Netflix?, Sign up now!" : "Already registered?, Sign In now!"}
        </p>
      </form>
      

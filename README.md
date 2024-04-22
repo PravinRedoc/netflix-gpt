@@ -1,7 +1,7 @@
 # Netflix GPT
 
 
-# Sections to build
+# Sections that were built
 
 -login/sign up
     - Sign in
